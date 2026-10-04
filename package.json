@@ -1,7 +1,6 @@
 {
   "name": "@itslil/lil2-remark-math",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
   "description": "remark-math, rewritten in typed LilScript: math on the flat lil2 pipeline, same trees",
   "type": "module",
   "license": "MIT",
@@ -10,10 +9,30 @@
     "type": "git",
     "url": "git+https://github.com/yeargun/lil2-remark-math.git"
   },
+  "bugs": {
+    "url": "https://github.com/yeargun/lil2-remark-math/issues"
+  },
   "homepage": "https://yeargun.github.io/lil2-remark-math/",
+  "keywords": [
+    "remark",
+    "math",
+    "tex",
+    "latex",
+    "markdown",
+    "lilscript",
+    "lil2",
+    "typed",
+    "fast"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "main": "./dist/remark-math.js",
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./types/index.d.ts",
       "convex": "./dist/remark-math.js",
       "deno": "./dist/remark-math.js",
       "edge-light": "./dist/remark-math.js",
@@ -22,8 +41,24 @@
       "workerd": "./dist/remark-math.js",
       "browser": "./dist/browser/remark-math.js",
       "default": "./dist/remark-math.js"
+    },
+    "./constants": {
+      "types": "./types/constants.d.ts",
+      "convex": "./dist/constants.js",
+      "deno": "./dist/constants.js",
+      "edge-light": "./dist/constants.js",
+      "react-native": "./dist/constants.js",
+      "worker": "./dist/constants.js",
+      "workerd": "./dist/constants.js",
+      "browser": "./dist/browser/constants.js",
+      "default": "./dist/constants.js"
     }
   },
+  "files": [
+    "dist/**/*.js",
+    "types",
+    "NOTICE.md"
+  ],
   "scripts": {
     "check:sources": "node scripts/shared-sources.mjs",
     "build:dev": "node scripts/build.mjs --dev",

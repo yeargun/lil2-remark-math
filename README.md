@@ -18,18 +18,52 @@ markdown into mdast and hast columns.
 | `data: {hName, hProperties, hChildren}` objects on each node | to-hast handlers by node kind |
 | rehype-katex finds math by `className` strings | the elements carry int flags (`HN_MATH_INLINE`, `HN_MATH_DISPLAY`, `HN_LANGUAGE_MATH`) |
 
-## Use
+## Install
 
-```js
-import {fromMarkdown, markdownToHast} from '@itslil/lil2-remark-math'
-
-fromMarkdown('$$\n\\alpha\n$$', true) // mdast columns; singleDollarTextMath = true
-markdownToHast('Euler: $e^{i\\pi}$', false)
+```bash
+npm install @itslil/lil2-remark-math
 ```
 
-The columns are lil2-mdast-util-from-markdown's and lil2-mdast-util-to-hast's. `dist/browser/` is the
-`browser` condition (named character references decoded by the document).
+TypeScript types are included. One ES module per entry; Node, Deno, Bun and workers get `dist/`, bundlers targeting
+browsers get `dist/browser/` through the `browser` condition.
 
+## Use
+
+```ts
+import {fromMarkdown, markdownToHast} from '@itslil/lil2-remark-math'
+import {K_INLINE_MATH, K_MATH} from '@itslil/lil2-remark-math/constants'
+
+const tree = fromMarkdown('Euler: $e^{i\\pi} + 1 = 0$\n\n$$\n\\int_0^1 x^2 dx\n$$', true)
+const [kind, , , firstChild, nextSibling, , , , s1] = tree
+function* walk(node = 0): Generator<number> {
+  yield node
+  for (let child = firstChild[node]; child >= 0; child = nextSibling[child]) yield* walk(child)
+}
+for (const node of walk()) {
+  if (kind[node] === K_INLINE_MATH) console.log('inline', s1[node]) // e^{i\pi} + 1 = 0
+  if (kind[node] === K_MATH) console.log('block', s1[node]) // \int_0^1 x^2 dx
+}
+
+const hast = markdownToHast('$x^2$')
+console.log(hast[6].includes('x^2')) // the TeX, in a `math-inline` element rehype-katex reads
+```
+
+`fromMarkdown(value, singleDollarTextMath?)` is remark-parse with remark-math (pass `true` for remark-math's default,
+`$x$` text math); `markdownToHast(value, allowDangerousHtml?)` adds remark-rehype. To render the formulas, use
+[lil2-rehype-katex](https://github.com/yeargun/lil2-rehype-katex), or in React `@itslil/lil2-react-markdown/full`.
+
+### Which package
+
+| you want | package |
+|---|---|
+| React elements | [`@itslil/lil2-react-markdown`](https://github.com/yeargun/lil2-react-markdown) (`/gfm`, `/full` for GFM, math, KaTeX) |
+| an HTML string, CommonMark | [`@itslil/lil2-micromark`](https://github.com/yeargun/lil2-micromark) |
+| an HTML string with GFM, math or KaTeX | `renderToStaticMarkup` of lil2-react-markdown's `/full` flavor (below) |
+| mdast (syntax tree) | [`lil2-mdast-util-from-markdown`](https://github.com/yeargun/lil2-mdast-util-from-markdown); with GFM [`lil2-remark-gfm`](https://github.com/yeargun/lil2-remark-gfm), math [`lil2-remark-math`](https://github.com/yeargun/lil2-remark-math), breaks [`lil2-remark-breaks`](https://github.com/yeargun/lil2-remark-breaks) |
+| hast (HTML tree) | [`lil2-mdast-util-to-hast`](https://github.com/yeargun/lil2-mdast-util-to-hast) and the same three, or [`lil2-rehype-katex`](https://github.com/yeargun/lil2-rehype-katex) with formulas rendered |
+
+Every package is one self-contained ES module with no runtime dependencies (React and KaTeX aside), ships its
+TypeScript types, and resolves to a Node build or a browser build through its `exports` conditions.
 ## Measured (2026-10-04)
 
 The `browser` build against remark-math@6.0.0 bundled for the browser with esbuild and minified by Terser, esbuild and Oxc
@@ -39,7 +73,7 @@ The `browser` build against remark-math@6.0.0 bundled for the browser with esbui
 |---|---:|---:|---:|
 | raw | 61,851 | 78,011 (Terser) | −20.7% |
 | gzip (9) | 19,994 | 21,286 (Terser) | −6.1% |
-| Brotli (11) | 17,509 | 18,881 (Terser) | −7.3% |
+| Brotli (11) | 17,486 | 18,881 (Terser) | −7.4% |
 
 Speed, upstream → lil2: markdown with math to HTML, median per call in a fresh browser context per lane, after checking that both
 give the same output (Playwright; Chromium 151, Firefox 153; AMD EPYC 7763 64-Core Processor). Cold rows are the first import and the
@@ -47,10 +81,10 @@ first call of a fresh page.
 
 | | Chromium | Firefox |
 |---|---:|---:|
-| math (1 KB) | 0.85 → 0.36 ms (0.43×) | 1.50 → 0.82 ms (0.55×) |
-| chat (1 KB) | 0.66 → 0.28 ms (0.43×) | 1.18 → 0.60 ms (0.51×) |
-| import, cold | 5.00 → 5.20 ms | 11.0 → 12.0 ms |
-| first call, cold | 10.6 → 9.90 ms | 14.0 → 11.0 ms |
+| math (1 KB) | 0.86 → 0.36 ms (0.42×) | 1.50 → 0.77 ms (0.52×) |
+| chat (1 KB) | 0.65 → 0.29 ms (0.44×) | 1.18 → 0.60 ms (0.51×) |
+| import, cold | 5.20 → 5.30 ms | 11.0 → 11.0 ms |
+| first call, cold | 10.6 → 10.4 ms | 13.0 → 11.0 ms |
 
 ## Behaviour
 
