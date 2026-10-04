@@ -1,0 +1,465 @@
+{
+  "version": 3,
+  "codec": "brotli",
+  "outputs": [
+    {
+      "mode": "single",
+      "format": "esm",
+      "entries": [
+        {
+          "name": "index",
+          "file": "remark-math.js",
+          "dynamic": false,
+          "closure": [
+            "remark-math.js"
+          ],
+          "row": 26213,
+          "raw_row": 84492
+        }
+      ],
+      "files": [
+        {
+          "file": "remark-math.js",
+          "role": "entry",
+          "source_map_for": null,
+          "label": [
+            "index"
+          ],
+          "modules": [
+            "index.lil",
+            "micromark/parse.lil",
+            "micromark/codes.lil",
+            "micromark/preprocess.lil",
+            "micromark/tokenizer.lil",
+            "micromark/initialize.lil",
+            "micromark/types.lil",
+            "micromark/factories.lil",
+            "micromark/constructs/basic.lil",
+            "micromark/util.lil",
+            "micromark/entities.lil",
+            "micromark/constructs/flow.lil",
+            "micromark/subtokenize.lil",
+            "micromark/constructs/containers.lil",
+            "micromark/constructs/html-flow.lil",
+            "micromark/constructs/inline.lil",
+            "micromark/constructs/attention.lil",
+            "micromark/constructs/label.lil",
+            "mdast/parse.lil",
+            "mdast/from-markdown.lil",
+            "mdast/tree.lil",
+            "hast/hast.lil",
+            "hast/properties.lil",
+            "hast/to-hast.lil",
+            "math/math.lil",
+            "math/syntax.lil",
+            "math/ids.lil",
+            "math/mdast-math.lil",
+            "math/hast-math.lil"
+          ],
+          "anchored": true,
+          "imports": [],
+          "dynamic_imports": [],
+          "bytes": 84492,
+          "codec_bytes": 26213,
+          "sha256": "97d10663648aa0f14ffce1a4e93072788c747479a84b219eaf4a7a7a143e60fa"
+        }
+      ],
+      "side_effects": [
+        "remark-math.js"
+      ],
+      "codec_total": 26213,
+      "rows_total": 26213,
+      "setters": 0,
+      "output": "primary",
+      "codec": "brotli",
+      "codec_settings": {
+        "brotli": {
+          "quality": 11,
+          "window": 22,
+          "mode": "generic"
+        },
+        "gzip": {
+          "level": 9,
+          "window": 15
+        }
+      },
+      "policy_fingerprint": [
+        162,
+        101,
+        124,
+        208,
+        92,
+        3,
+        15,
+        127,
+        177,
+        194,
+        121,
+        143,
+        208,
+        159,
+        255,
+        26,
+        43,
+        165,
+        155,
+        211,
+        3,
+        151,
+        147,
+        12,
+        197,
+        241,
+        225,
+        145,
+        161,
+        91,
+        26,
+        113
+      ]
+    }
+  ],
+  "source_sha256": "285bf017176227e3057649f72c77b41957435590eef3c71c48e8862c56923bc9",
+  "inputs": {
+    "root": 0,
+    "entries": [
+      {
+        "name": "index",
+        "module": 0
+      }
+    ],
+    "modules": [
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/index.lil",
+        "bytes": 1706,
+        "sha256": "03c7ab2488b89ca4268aaf9eb3b58f290631600739e3aa9214b0fe70be4f3bd1",
+        "dependencies": [
+          1,
+          18,
+          20,
+          19,
+          21,
+          23,
+          24
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/parse.lil",
+        "bytes": 6369,
+        "sha256": "f6eed67dfd8d602382c6c32fa048e9ce9838265f9fba54c10eb9abe91c819a53",
+        "dependencies": [
+          2,
+          3,
+          4,
+          5,
+          12,
+          8,
+          11,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/codes.lil",
+        "bytes": 2704,
+        "sha256": "d019f2dd7ebbd8d7ff3890d107825a79063336b0834903f71d2b00ac4e89f027",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/preprocess.lil",
+        "bytes": 1296,
+        "sha256": "e023cdadf51326535197f3b564a6af05a8f3f9f9abdfda451e02d63c429885dc",
+        "dependencies": [
+          2
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/tokenizer.lil",
+        "bytes": 27616,
+        "sha256": "e3f30a934b2f2bf1a5cf3c44aaabcd2a1912523901e0112b4b1a7fd545347315",
+        "dependencies": [
+          2
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/initialize.lil",
+        "bytes": 14484,
+        "sha256": "18e3479f9f2f8cd13d4a78e6242b3ed22d378ad8cca4c55c9f55758895447ddc",
+        "dependencies": [
+          2,
+          6,
+          4,
+          7,
+          8,
+          11
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/types.lil",
+        "bytes": 4716,
+        "sha256": "a62f09d8047327670d88b17e101f52695ef87d92272132948da8cb45c4cc2684",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/factories.lil",
+        "bytes": 7493,
+        "sha256": "ca80919c1bc134c2439a6fd447008f190ad049daa1a19a1585ca0fc212baef53",
+        "dependencies": [
+          2,
+          6,
+          4
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/constructs/basic.lil",
+        "bytes": 18657,
+        "sha256": "90d2260e03411b06192989279bb224231cf16d55db8a269b75f95b2592a74465",
+        "dependencies": [
+          2,
+          6,
+          4,
+          7,
+          9
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/util.lil",
+        "bytes": 7500,
+        "sha256": "31fc6b4da3bfb47f56f61a6178856a14220e79ef4f87ba2eb04381edca67c6b1",
+        "dependencies": [
+          2,
+          10
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/entities.lil",
+        "bytes": 37348,
+        "sha256": "9c608b959bfcf493e0b34182022531fc250df41de8a8605e952a92a741fcf025",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/constructs/flow.lil",
+        "bytes": 12928,
+        "sha256": "6c3d121f9677445a37cff98576bf1d7c99a6c9b1a2c4348fac4fc9b5bed29978",
+        "dependencies": [
+          2,
+          6,
+          4,
+          7,
+          12,
+          9
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/subtokenize.lil",
+        "bytes": 8599,
+        "sha256": "3a5a1210a80bf8fde847542ea9d778175f8874c9dc648304d75ddbd2e2b333bc",
+        "dependencies": [
+          2,
+          6,
+          4
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/constructs/containers.lil",
+        "bytes": 7975,
+        "sha256": "b1a01f6045fc39679eb701fd44d0577136344abac44857f5ca9de3c7b69566aa",
+        "dependencies": [
+          2,
+          6,
+          4,
+          7,
+          8
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/constructs/html-flow.lil",
+        "bytes": 14542,
+        "sha256": "772de9988dd106ecc960233adb95f633bb3841866d8bcd412dd510d7b17382d1",
+        "dependencies": [
+          2,
+          6,
+          4,
+          8
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/constructs/inline.lil",
+        "bytes": 12774,
+        "sha256": "ad733d89f0e585abe7c2684a35bd9fbe30cbe48098f39f1b424c1a4485e6b647",
+        "dependencies": [
+          2,
+          6,
+          4,
+          7
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/constructs/attention.lil",
+        "bytes": 5570,
+        "sha256": "47636b6ef5cb02ec9ea475303dc38d2534c239273aaa86b9a5ff160fd4059bd4",
+        "dependencies": [
+          2,
+          6,
+          4
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/micromark/constructs/label.lil",
+        "bytes": 10432,
+        "sha256": "ed1ab40d3bdbb64dafa396786b5547283a3b5617790c1ca0e6272a7220a3b25a",
+        "dependencies": [
+          2,
+          6,
+          4,
+          7,
+          9
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/mdast/parse.lil",
+        "bytes": 1208,
+        "sha256": "239d92ff7ff46044067b20c539ba483d89e9824d959d7008658a293743454236",
+        "dependencies": [
+          1,
+          4,
+          19,
+          20
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/mdast/from-markdown.lil",
+        "bytes": 24077,
+        "sha256": "512989ae656118a98b2ebecd67e3713ce3ace55322a92122fd0138b2e906b08c",
+        "dependencies": [
+          2,
+          6,
+          4,
+          9,
+          20
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/mdast/tree.lil",
+        "bytes": 6642,
+        "sha256": "829f7c145942c47ed5a64ee66799c74c67524e1fb922a89ed6708551a2a9c92b",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/hast/hast.lil",
+        "bytes": 10279,
+        "sha256": "03d3d2d68dc3d44ac20786538ed1cb693baefb3b21afbd67fa01fa7796f15480",
+        "dependencies": [
+          22
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/hast/properties.lil",
+        "bytes": 1110,
+        "sha256": "3a21343b334a9c26a4c63eb50bd8a3c529430d88c1c32fe7cb42c7eb33720f8d",
+        "dependencies": [],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/hast/to-hast.lil",
+        "bytes": 24183,
+        "sha256": "5d566b1a9be7f52df534306e1de613c2e73815a6d17016954e56c320e5ce06a7",
+        "dependencies": [
+          20,
+          9,
+          21
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/math/math.lil",
+        "bytes": 854,
+        "sha256": "329715e874a578acd9edc71e7aabeabff26324ee67fb1a0c8376b8eb4cb6ac87",
+        "dependencies": [
+          1,
+          19,
+          23,
+          25,
+          27,
+          28
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/math/syntax.lil",
+        "bytes": 9988,
+        "sha256": "3029e15575e790df35a87d00486f2d6cbccfd447702c8ae897026c8cb87f9861",
+        "dependencies": [
+          2,
+          6,
+          4,
+          7,
+          1,
+          26
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/math/ids.lil",
+        "bytes": 1060,
+        "sha256": "025443d06e5701b01d6262b08b0ae288baa3af3d3bb7a3f3e27fdadaa249e427",
+        "dependencies": [
+          6,
+          4,
+          20
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/math/mdast-math.lil",
+        "bytes": 2026,
+        "sha256": "8a50097f97e3243dfbb782dac2ec89cfa6a024d18ae856bea11dd1323f4a67b0",
+        "dependencies": [
+          19,
+          20,
+          26
+        ],
+        "dynamic_dependencies": []
+      },
+      {
+        "path": "/home/azureuser/lilscript-work/lil2/prod-snapshots/lil2-remark-math/src/math/hast-math.lil",
+        "bytes": 1476,
+        "sha256": "6d6c15c6452305fe9d9e93a2f2ab7dccb1eb9de2df5f7911b088a8b7aeb1433c",
+        "dependencies": [
+          20,
+          21,
+          23,
+          26
+        ],
+        "dynamic_dependencies": []
+      }
+    ],
+    "host_modules": [],
+    "host_reserved": []
+  }
+}
